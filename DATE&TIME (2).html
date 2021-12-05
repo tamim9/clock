@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+<title>DATE & TIME</title>
+<link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+
+<body>
+<div id="container">
+<span id="time"></span>
+</div>
+
+
+<script>
+    function datefunc() {
+    let today = new Date();
+    let now = today.toLocaleTimeString();
+    document.getElementById("time").innerHTML = now;
+    }
+    
+    setInterval(datefunc, 1);
+</script>
+
+<div id="container2">
+<span id="date"></span>
+</div>
+
+<script>
+let today = new Date();
+let date = today.toDateString();
+document.getElementById('date').innerHTML = date;
+</script>
+
+
+
+
+<div class="image"></div>
+
+<style>
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    background-color: black;
+}
+.image {
+    background-image: url("https://wallup.net/wp-content/uploads/2018/09/30/849318-time-dial-clock-sky.jpg");
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}
+#time {
+    font-size: 60px;
+    font-family: Dancing Script;
+    text-align: center;
+    color: darkcyan;
+    padding: 80px;
+    height: 150px;
+    width: 180px;
+    border-radius: 50%;
+    animation: timeani;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes timeani {
+    0%{background-image: linear-gradient(0deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    5%{background-image: linear-gradient(18deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    10%{background-image: linear-gradient(36deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    15%{background-image: linear-gradient(54deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    20%{background-image: linear-gradient(72deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    25%{background-image: linear-gradient(90deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    30%{background-image: linear-gradient(108deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    35%{background-image: linear-gradient(126deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    40%{background-image: linear-gradient(144deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    45%{background-image: linear-gradient(162deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    50%{background-image: linear-gradient(180deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    55%{background-image: linear-gradient(-162deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    60%{background-image: linear-gradient(-144deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    65%{background-image: linear-gradient(-126deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    70%{background-image: linear-gradient(-108deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    75%{background-image: linear-gradient(-90deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    80%{background-image: linear-gradient(-72deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    85%{background-image: linear-gradient(-54deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    90%{background-image: linear-gradient(-36deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    95%{background-image: linear-gradient(-18deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+    100%{background-image: linear-gradient(0deg, rgb(208, 255, 0), rgb(0, 255, 85));}
+}
+
+#date {
+    position: fixed;
+    bottom: 5%;
+    font-size: 40px;
+    font-family: pt sans;
+    text-align: center;
+    text-shadow: 4px 3px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    padding:10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10%;
+    animation: dateani;
+    animation-timing-function: ease-in-out;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dateani {
+    0%{color: chartreuse;}
+    20%{color: rgb(255, 157, 0);}
+    40%{color: rgb(123, 255, 0);}
+    60%{color: rgb(0, 238, 255);}
+    80%{color: rgb(94, 255, 0);}
+    100%{color: chartreuse;}
+}
+
+@media screen and (max-height: 520px){
+    #container{transform: scale(0.7);}
+    #date{font-size: 30px; bottom: 0;}
+}
+@media screen and (max-height: 375px) {
+    #date{
+        position: fixed;
+        bottom: 0;
+        top: 10%;
+        height: 100%;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+    }
+}
+</style>
+
+
+
+</body>
+</html>
